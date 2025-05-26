@@ -1,6 +1,10 @@
 name: First WorkFlow CI
 
-on: fork
+on: 
+ push:
+  branches:
+   - feature
+   - ! master
 
 jobs:
  build:
