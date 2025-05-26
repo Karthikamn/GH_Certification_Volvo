@@ -3,8 +3,8 @@ name: First WorkFlow CI
 on: 
  push:
   branches:
-   - feature
-   - ! master
+   - 'feature'
+   - '!master'
 
 jobs:
  build:
