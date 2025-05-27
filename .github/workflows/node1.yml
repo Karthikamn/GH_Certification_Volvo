@@ -1,7 +1,7 @@
 name: Node Js 
 
 on:
- workflow_dispatch:
+ issues
 
 jobs:
  build-node:
