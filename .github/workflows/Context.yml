@@ -1,0 +1,20 @@
+name: GitHub Context
+
+run-name: ${{github.actor}}
+
+on:
+ workflow_dispatch:
+
+jobs:
+ Github-context:
+  runs-on: ubuntu-latest
+  steps:
+   - name: Display Info
+     run: |
+      echo 'Event name ${{github.event}}'
+      echo "Ref: ${{github.ref}}"
+      echo "SHA: ${{github.sha}}"
+      echo "Actor: ${{github.actor}}"
+      echo "Workflow: ${{github.workflow}}"
+      echo "Run Id: ${{github.run_id}}"
+      echo "Run number: ${{github.run_number}}"
