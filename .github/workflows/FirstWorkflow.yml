@@ -4,14 +4,17 @@ on:
  push:
   branches:
    - 'feature'
-   - '!master'
+   - 'master'
 
 jobs:
- build:
+ build_java:
    runs-on: ubuntu-latest
    steps:
-     - run: echo 'build'
-  
+     - name: Setup Java JDK
+       uses: actions/setup-java@v4.6.0
+       with:
+        java-version: '17'
+        distribution: 'microsoft'
  test:
    runs-on: windows-latest
    steps:
