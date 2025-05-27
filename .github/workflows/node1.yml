@@ -1,13 +1,13 @@
 name: Node Js 
 
 on:
- issues
-
+ pull_request:
+  types:
+   - opened
+  branches:
+   - master
 jobs:
  build-node:
   runs-on: ubuntu-latest
   steps:
-    - name: Setup Node.js environment
-      uses: actions/setup-node@v3.9.1
-      with:
-        node-version: '21'
+    - run: echo 'Run whenever PR is opened'
