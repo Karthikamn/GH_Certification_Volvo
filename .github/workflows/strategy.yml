@@ -7,7 +7,7 @@ on:
  # fail-fast: stops all which are in-progress as well as future jobs one stop at a time . - critical CI/CD- any failures - halt all
 
 jobs:
- test:
+ build_node:
   runs-on: ubuntu-latest
   strategy:
    fail-fast: true
@@ -18,5 +18,9 @@ jobs:
       uses: actions/setup-node@v3.9.1
       with:
        node-version: ${{matrix.node-version}}
- 
+ test:
+   needs: build_node
+   runs-on: windows-latest
+   steps:
+     - run: echo 'test' 
 
