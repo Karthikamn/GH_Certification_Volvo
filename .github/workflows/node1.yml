@@ -1,13 +1,18 @@
 name: Node Js 
 
 on:
- pull_request:
-  types:
-   - opened
-  branches:
-   - master
+ workflow_dispatch:
 jobs:
  build-node:
-  runs-on: ubuntu-latest
+  runs-on: ${{matrix.os}}
+  strategy:
+   matrix:
+    node-version: [v21,v22,v23]
+    os: 
+     - ubuntu-latest
+     - windows-latest
   steps:
-    - run: echo 'Run whenever PR is opened'
+   - name: Setup Node.js environment
+     uses: actions/setup-node@v3.9.1
+     with:
+      node-version: ${{matrix.node-version}}
