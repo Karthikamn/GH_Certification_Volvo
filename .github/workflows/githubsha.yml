@@ -1,7 +1,7 @@
 name: Build and push
 
 env:
- DOCKER_IMAGE: workflow
+ DOCKER_USERNAME: ${{vars.DOCKER_NAME}}
 on:
  push:
   branches:
@@ -9,10 +9,9 @@ on:
 
 jobs:
  build:
-  env:
-   DOCKER_IMAGE: job
+ 
   runs-on: ubuntu-latest
   steps:  
    -  name: Display
     
-      run: echo '${{env.DOCKER_IMAGE}}'
+      run: echo '${{env.DOCKER_USERNAME}}'
