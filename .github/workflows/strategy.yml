@@ -1,0 +1,20 @@
+name: Strategy
+
+on:
+ workflow_dispatch:
+
+ # continue-on-error : allows  the workflow to continue even if anything fails - non-crtitical
+ # fail-fast: stops all which are in-progress as well as future jobs one stop at a time . - critical CI/CD- any failures - halt all
+
+jobs:
+ test:
+  runs-on: ubuntu-latest
+  strategy:
+   fail-fast: true
+   matrix: 
+    node-version: [ 22, 25, 24]
+  steps:
+   - run: echo '${{matrix.node-version}}'
+
+ 
+
