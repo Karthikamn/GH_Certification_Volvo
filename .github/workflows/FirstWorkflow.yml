@@ -16,6 +16,7 @@ jobs:
         java-version: '17'
         distribution: 'microsoft'
  test:
+   needs: build_java
    runs-on: windows-latest
    steps:
      - run: echo 'test' 
