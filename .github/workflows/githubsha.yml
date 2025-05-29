@@ -1,12 +1,15 @@
 name: Build and push
+run-name: ${{inputs.debug}}
 
+on:
+ workflow_dispatch:
+  inputs:
+   debug:
+    type: boolean
+    default: false
 env:
  DOCKER_USERNAME: ${{vars.DOCKER_NAME}}
  DOCKER_PASSWORD: ${{secrets.DOCKER_PSWD}}
-on:
- push:
-  branches:
-   - master
 
 jobs:
  build:
