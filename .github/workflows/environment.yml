@@ -13,4 +13,4 @@ jobs:
   environment: ${{inputs.TARGET_ENVIRONMENT}}
   steps:
    - name: Display secret
-     run: echo 'Secret value is ${{secrets.TAR_SECRET}}'
+     run: echo 'variable value is ${{vars.TAR_VAR}}'
