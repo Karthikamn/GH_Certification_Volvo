@@ -1,0 +1,16 @@
+name: Reusable Workflow
+
+on:
+ workflow_call:
+   inputs:
+    message:
+     description: Message to print
+     required: true
+     type: string
+
+jobs:
+ print-message:
+  runs-on: ubuntu-latest
+  steps:
+   - name: Print the Message
+     run: echo '${{inputs.message}}'
