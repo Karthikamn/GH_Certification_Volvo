@@ -1,0 +1,12 @@
+name: Main For Reusable 
+
+on:
+ push:
+  branches:
+   - master
+
+jobs:
+ re-usable-workflow:
+  uses: ./.github/workflows/reuse.yml
+  with:
+   message: 'Hello welcome to reusable template concept'
